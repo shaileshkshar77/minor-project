@@ -23,8 +23,8 @@ line_down=int(3*(h/5))
 up_limit=int(1*(h/5))
 down_limit=int(4*(h/5))
 
-print("Red line y:",str(line_down))
-print("Blue line y:",str(line_up))
+#print("Red line y:",str(line_down))
+#print("Blue line y:",str(line_up))
 line_down_color=(255,0,0)
 line_up_color=(255,0,255)
 pt1 =  [0, line_down]
@@ -122,8 +122,8 @@ while(cap.isOpened()):
                         cars.append(p)
                         pid+=1
 
-                cv2.circle(frame,(cx,cy),5,(0,0,255),-1)
-                img=cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
+                #cv2.circle(frame,(cx,cy),5,(0,0,255),-1)
+                #img=cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
 
         for i in cars:
             cv2.putText(frame, str(i.getId()), (i.getX(), i.getY()), font, 0.3, i.getRGB(), 1, cv2.LINE_AA)
@@ -133,10 +133,10 @@ while(cap.isOpened()):
 
         str_up='UP: '+str(cnt_up)
         str_down='DOWN: '+str(cnt_down)
-        frame=cv2.polylines(frame,[pts_L1],False,line_down_color,thickness=2)
-        frame=cv2.polylines(frame,[pts_L2],False,line_up_color,thickness=2)
-        frame=cv2.polylines(frame,[pts_L3],False,(255,255,255),thickness=1)
-        frame=cv2.polylines(frame,[pts_L4],False,(255,255,255),thickness=1)
+        # frame=cv2.polylines(frame,[pts_L1],False,line_down_color,thickness=2)
+        # frame=cv2.polylines(frame,[pts_L2],False,line_up_color,thickness=2)
+        # frame=cv2.polylines(frame,[pts_L3],False,(255,255,255),thickness=1)
+        # frame=cv2.polylines(frame,[pts_L4],False,(255,255,255),thickness=1)
         cv2.putText(frame, str_up, (10, 40), font, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
         cv2.putText(frame, str_up, (10, 40), font, 0.5, (0, 0, 255), 1, cv2.LINE_AA)
         cv2.putText(frame, str_down, (10, 90), font, 0.5, (255, 255, 255), 2, cv2.LINE_AA)
